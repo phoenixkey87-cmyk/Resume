@@ -623,7 +623,7 @@
     <div class="resume-body" id="resume-body">
     <!-- Header -->
     <div class="header">
-        <h1>LaKeysha Strickland</h1>
+        <h1><a href="#" id="back-to-cover" style="color: white; text-decoration: none; cursor: pointer;">LaKeysha Strickland</a></h1>
         <div class="credentials">MBA, CSM, CSPO</div>
         <div class="title-line">Systems Engineer II | AI-Assisted Solutions | Enterprise Automation | Technical Product Delivery</div>
         <div class="contact-line">
@@ -864,6 +864,13 @@
             button.setAttribute('aria-selected', 'true');
             document.getElementById(targetTab).classList.add('active');
         });
+    });
+    // Back to cover sheet when clicking name
+    document.getElementById('back-to-cover').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('resume-body').classList.remove('visible');
+        document.getElementById('cover-sheet').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 </script>
 
