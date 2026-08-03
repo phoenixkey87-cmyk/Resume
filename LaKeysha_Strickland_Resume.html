@@ -136,56 +136,33 @@
             color: #444;
         }
 
-        /* Impact Metrics Grid */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-            margin: 20px 0;
-        }
-
-        .metric-card {
-            background: var(--light-bg);
-            border-radius: 8px;
-            padding: 20px 12px;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .metric-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(184, 115, 51, 0.15);
-        }
-
-        .metric-value {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-        }
-
-        .metric-label {
-            font-size: 0.75em;
-            color: #666;
-            margin-top: 6px;
-            display: block;
-        }
-
         /* Skills */
+        .skills-category {
+            margin-bottom: 16px;
+        }
+
+        .skills-category-title {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 10px 0;
+            gap: 8px;
+            margin: 0;
         }
 
         .skill-tag {
             background: var(--light-bg);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 7px 16px;
-            font-size: 0.85em;
+            padding: 6px 14px;
+            font-size: 0.82em;
             color: var(--navy);
             font-weight: 500;
             transition: all 0.2s;
@@ -209,21 +186,27 @@
             border-left-color: var(--accent);
         }
 
+        .job-header {
+            margin-bottom: 4px;
+        }
+
         .job-title {
             font-size: 1.08em;
             font-weight: 700;
             color: var(--navy);
-        }
-
-        .job-company {
-            font-size: 0.95em;
-            color: #555;
+            display: inline;
         }
 
         .job-dates {
             font-size: 0.85em;
             color: var(--accent);
-            font-style: italic;
+            font-weight: 600;
+            float: right;
+        }
+
+        .job-company {
+            font-size: 0.9em;
+            color: #555;
             margin-bottom: 10px;
         }
 
@@ -396,16 +379,13 @@
                 padding: 24px 20px;
             }
 
-            .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .job-dates {
+                float: none;
+                display: block;
             }
         }
 
         @media (max-width: 480px) {
-            .metrics-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
             .header .title-line {
                 font-size: 0.72em;
             }
@@ -428,8 +408,8 @@
     <!-- Header -->
     <div class="header">
         <h1>LaKeysha Strickland</h1>
-        <div class="credentials">MBA, CSM, CSPO</div>
-        <div class="title-line">Systems Engineer II | AI-Assisted Solutions | Enterprise Automation | Technical Product Delivery</div>
+        <div class="credentials">MBA, CSM, CSPO, AWS AI Practitioner</div>
+        <div class="title-line">Systems Engineer II | Automation &amp; Change Management</div>
         <div class="contact-line">
             St. Louis, MO
             <span class="sep">|</span>
@@ -446,42 +426,72 @@
     <div class="section">
         <h2 class="section-heading">Professional Summary</h2>
         <p class="summary">
-            Systems Engineer II and AWS Certified AI Practitioner with 12+ years of experience driving enterprise 
-            reliability through automation, AI-assisted development, and cross-functional coordination. Built and 
-            deployed an enterprise Deconfliction Dashboard using Amazon Kiro and Microsoft Power Apps that prevents 
-            10&ndash;19 potential outages daily, and automated third-party carrier maintenance workflows that eliminated 
-            manual inbox monitoring across 13+ provider relationships. Combines technical product delivery with 
-            change governance expertise to reduce operational risk, standardize processes, and empower teams 
-            with practical tools and training.
+            Results-driven Systems Engineer II with 12+ years of experience spanning enterprise network operations,
+            change governance, and AI-assisted automation. Specializes in building production-ready tools with
+            Python, Microsoft Power Platform, and Amazon Kiro that prevent service-impacting outages, eliminate
+            manual processes, and give operations teams faster, data-driven decisions. Architected an enterprise
+            Deconfliction Dashboard that prevents 10&ndash;19 potential outages daily and automated carrier
+            maintenance workflows across 13+ provider relationships. Recognized for delivering high-impact
+            solutions, standardizing governance processes, and training cross-functional teams at scale.
         </p>
     </div>
 
-    <!-- Core Expertise -->
+    <!-- Core Skills -->
     <div class="section">
-        <h2 class="section-heading">Core Expertise</h2>
-        <div class="skills-list">
-            <span class="skill-tag">Amazon Kiro</span>
-            <span class="skill-tag">Amazon Q</span>
-            <span class="skill-tag">Microsoft Power Apps</span>
-            <span class="skill-tag">Power Automate</span>
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">Azure</span>
-            <span class="skill-tag">GitHub/GitHub Pages</span>
-            <span class="skill-tag">AI-Assisted Development</span>
-            <span class="skill-tag">Systems Engineering</span>
-            <span class="skill-tag">Enterprise Network Operations</span>
-            <span class="skill-tag">Change Management</span>
-            <span class="skill-tag">Risk &amp; Impact Analysis</span>
-            <span class="skill-tag">Technical Product Delivery</span>
-            <span class="skill-tag">Agile/Scrum</span>
-            <span class="skill-tag">ITIL</span>
-            <span class="skill-tag">Jira</span>
-            <span class="skill-tag">BMC Remedy</span>
-            <span class="skill-tag">SharePoint</span>
-            <span class="skill-tag">UAT</span>
-            <span class="skill-tag">SOP Development</span>
-            <span class="skill-tag">Technical Training</span>
-            <span class="skill-tag">Stakeholder Management</span>
+        <h2 class="section-heading">Core Skills</h2>
+
+        <div class="skills-category">
+            <div class="skills-category-title">Automation &amp; Development</div>
+            <div class="skills-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Amazon Kiro</span>
+                <span class="skill-tag">Amazon Q</span>
+                <span class="skill-tag">Claude Code</span>
+                <span class="skill-tag">Power Apps</span>
+                <span class="skill-tag">Power Automate</span>
+                <span class="skill-tag">AI-Assisted Development</span>
+                <span class="skill-tag">GitHub / GitHub Pages</span>
+                <span class="skill-tag">Outlook COM Automation</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Regex</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <div class="skills-category-title">Cloud &amp; Platforms</div>
+            <div class="skills-list">
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Azure</span>
+                <span class="skill-tag">SharePoint</span>
+                <span class="skill-tag">Microsoft Teams</span>
+                <span class="skill-tag">Microsoft 365</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <div class="skills-category-title">Operations &amp; Process</div>
+            <div class="skills-list">
+                <span class="skill-tag">Change Management</span>
+                <span class="skill-tag">ITIL Framework</span>
+                <span class="skill-tag">Risk &amp; Impact Analysis</span>
+                <span class="skill-tag">Method of Procedure (MOP)</span>
+                <span class="skill-tag">SOP Development</span>
+                <span class="skill-tag">Agile / Scrum</span>
+                <span class="skill-tag">Six Sigma</span>
+                <span class="skill-tag">Compliance &amp; Governance</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <div class="skills-category-title">Tools &amp; Reporting</div>
+            <div class="skills-list">
+                <span class="skill-tag">BMC Remedy</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">Excel / openpyxl</span>
+                <span class="skill-tag">Technical Training</span>
+                <span class="skill-tag">Stakeholder Management</span>
+                <span class="skill-tag">UAT</span>
+            </div>
         </div>
     </div>
 
@@ -490,84 +500,93 @@
         <h2 class="section-heading">Professional Experience</h2>
 
         <div class="job">
-            <div class="job-title">Systems Engineer II</div>
-            <div class="job-company">Spectrum / Charter Communications</div>
-            <div class="job-dates">Mar 2026 &ndash; Present</div>
+            <div class="job-header">
+                <div class="job-title">Systems Engineer II &mdash; Automation &amp; Change Management</div>
+                <div class="job-dates">Mar 2026 &ndash; Present</div>
+            </div>
+            <div class="job-company">Spectrum (Charter Communications) &nbsp;|&nbsp; St. Louis, MO</div>
             <ul>
-                <li>Designed and deployed an enterprise-wide Deconfliction Dashboard and Portal using Amazon Kiro and Microsoft Power Apps to identify overlapping maintenance activity before implementation.</li>
-                <li>Help avoid at least 10 potential customer-impacting outages on a typical day through proactive conflict detection, including 19 potential outages identified and prevented in a single day.</li>
-                <li>Coordinate approximately 50 enterprise change tickets per week and roughly 20 third-party carrier tickets per day for providers including Comcast, Lumen, Netflix, and other telecommunications and content partners.</li>
-                <li>Collaborate with 20+ engineering and operations teams nationwide to validate impacts, correct ticket data, enforce approved Methods of Procedure (MOPs), and reduce operational risk.</li>
-                <li>Updated and standardized six SOPs to strengthen governance, improve consistency, and clarify execution requirements across engineering workflows.</li>
-                <li>Train employees on impact corrections, carrier ticket creation, correct MOP selection, change processes, and internal tools; also create video guides and technical documentation to support adoption.</li>
-                <li>Use Amazon Q for code support, documentation, testing, workflow automation, and process improvement; represent the team in cloud-related meetings and communicate updates to stakeholders.</li>
+                <li>Architected and deployed an enterprise Deconfliction Dashboard and Portal using Amazon Kiro and Microsoft Power Apps that identifies overlapping maintenance activity before implementation, preventing 10&ndash;19 potential customer-impacting outages daily.</li>
+                <li>Built a Python-based carrier maintenance automation system that monitors a shared Outlook mailbox, detects notifications from 13+ carriers via regex parsing, and auto-generates pre-filled CRQ records mapped to CM Portal MOP Mgmt fields&mdash;eliminating manual inbox monitoring entirely.</li>
+                <li>Coordinate ~50 enterprise change tickets weekly and ~20 third-party carrier tickets daily for Comcast, Lumen, Netflix, and other telecommunications and content partners.</li>
+                <li>Collaborate with 20+ engineering and operations teams nationwide to validate impacts, correct ticket data, enforce approved MOPs, and reduce operational risk.</li>
+                <li>Updated and standardized 6 SOPs to strengthen governance, improve consistency, and clarify execution requirements across engineering workflows.</li>
+                <li>Train employees on impact corrections, carrier ticket workflows, MOP selection, and internal tools; produce video guides and technical documentation to accelerate adoption.</li>
+                <li>Leverage Amazon Q for code support, documentation, testing, and workflow automation; represent the team in cloud-related meetings and communicate updates to stakeholders.</li>
             </ul>
         </div>
 
         <div class="job">
-            <div class="job-title">Change Control Analyst II</div>
-            <div class="job-company">Spectrum / Charter Communications</div>
-            <div class="job-dates">Mar 2019 &ndash; Mar 2026</div>
+            <div class="job-header">
+                <div class="job-title">Change Control Analyst II</div>
+                <div class="job-dates">Mar 2019 &ndash; Mar 2026</div>
+            </div>
+            <div class="job-company">Spectrum (Charter Communications) &nbsp;|&nbsp; St. Louis, MO</div>
             <ul>
-                <li>Led analytic oversight of scheduled network maintenance, identifying resource and cross-service collisions across a converged enterprise network.</li>
-                <li>Served as a primary point of contact for third-party maintenance activity and coordinated complex changes among engineering, operations, project teams, and external providers.</li>
-                <li>Prepared operational reporting, analyzed maintenance trends, and recommended standards and process improvements that strengthened compliance and network reliability.</li>
-                <li>Developed change support documentation, manuals, procedures, and training while performing impact assessments and risk reviews in alignment with ITIL practices.</li>
+                <li>Led analytic oversight of scheduled network maintenance, identifying resource and cross-service collisions across a converged enterprise network serving millions of subscribers.</li>
+                <li>Served as primary point of contact for third-party carrier maintenance, coordinating complex changes among engineering, operations, project teams, and external providers.</li>
+                <li>Prepared operational reporting, analyzed maintenance trends, and recommended process improvements that strengthened compliance and network reliability.</li>
+                <li>Developed change support documentation, manuals, procedures, and training materials while performing impact assessments and risk reviews in alignment with ITIL practices.</li>
             </ul>
         </div>
 
         <div class="job">
-            <div class="job-title">Change Control Analyst</div>
-            <div class="job-company">Spectrum / Charter Communications</div>
-            <div class="job-dates">Jan 2017 &ndash; Mar 2019</div>
+            <div class="job-header">
+                <div class="job-title">Change Control Analyst</div>
+                <div class="job-dates">Jan 2017 &ndash; Mar 2019</div>
+            </div>
+            <div class="job-company">Spectrum (Charter Communications) &nbsp;|&nbsp; St. Louis, MO</div>
             <ul>
-                <li>Coordinated and facilitated scheduled network maintenance while enforcing change policies and procedures designed to protect the Spectrum network and revenue-generating customers.</li>
+                <li>Coordinated and facilitated scheduled network maintenance while enforcing change policies designed to protect the Spectrum network and revenue-generating customers.</li>
                 <li>Analyzed customer and service impacts, escalated conflicts, and supported carrier-class operating practices across enterprise maintenance activity.</li>
             </ul>
         </div>
 
         <div class="job">
-            <div class="job-title">Internet &amp; Voice Repair Technician</div>
-            <div class="job-company">Spectrum / Charter Communications</div>
-            <div class="job-dates">Jan 2014 &ndash; Jan 2017</div>
+            <div class="job-header">
+                <div class="job-title">Internet &amp; Voice Repair Technician</div>
+                <div class="job-dates">Jan 2014 &ndash; Jan 2017</div>
+            </div>
+            <div class="job-company">Spectrum (Charter Communications) &nbsp;|&nbsp; St. Louis, MO</div>
             <ul>
-                <li>Resolved complex internet and voice service issues, handled customer escalations, and consistently supported service-quality and customer-experience goals.</li>
+                <li>Resolved complex internet and voice service issues, managed customer escalations, and consistently met service-quality and customer-experience targets.</li>
                 <li>Earned the Spectrum BEST Award for outstanding customer service performance.</li>
             </ul>
         </div>
     </div>
 
-    <!-- Selected Technical Projects -->
+    <!-- Key Projects -->
     <div class="section">
-        <h2 class="section-heading">Selected Technical Projects</h2>
+        <h2 class="section-heading">Key Projects</h2>
 
         <div class="project">
             <div class="project-title">Enterprise Deconfliction Dashboard &amp; Portal</div>
-            <div class="project-tech">Amazon Kiro, Microsoft Power Apps, AI-Assisted Development</div>
+            <div class="project-tech">Amazon Kiro &middot; Microsoft Power Apps &middot; SharePoint &middot; AI-Assisted Development</div>
             <ul>
-                <li>Took the solution from business problem and concept through design, development, testing, user adoption, and ongoing enhancement; partnered with a colleague for SQL integration support.</li>
-                <li>Centralized maintenance visibility so specialists can identify ticket collisions before execution and make informed decisions that reduce outage risk and manual research.</li>
+                <li>Took the solution from business problem through design, development, testing, user adoption, and ongoing enhancement; partnered with a colleague for SQL integration support.</li>
+                <li>Centralized maintenance visibility so specialists can identify ticket collisions before execution, reducing outage risk and eliminating hours of manual research per day.</li>
+                <li>Delivers proactive conflict detection used daily by the Change Management team to make informed go/no-go decisions on scheduled maintenance.</li>
             </ul>
         </div>
 
         <div class="project">
             <div class="project-title">Third-Party Carrier Maintenance Automation</div>
-            <div class="project-tech">Python, Outlook COM Automation, Microsoft Teams Webhooks, Amazon Kiro</div>
+            <div class="project-tech">Python &middot; Outlook COM (pywin32) &middot; Microsoft Teams Webhooks &middot; openpyxl &middot; Amazon Kiro</div>
             <ul>
-                <li>Built an automated workflow that monitors the shared carrier mailbox, detects incoming maintenance notifications from 13+ carriers (Lumen, Zayo, AT&amp;T, Verizon, Cogent, etc.), and extracts ticket numbers, maintenance windows, circuit IDs, and impact details using regex-based parsing.</li>
-                <li>Sends real-time Microsoft Teams Adaptive Card alerts to the team channel upon detection, eliminating manual inbox monitoring and reducing response time.</li>
-                <li>Auto-generates pre-filled Carrier CRQ records mapped to CM Portal MOP Mgmt fields, including impact auto-determination logic, scheduled dates, and carrier-specific assignee groups.</li>
-                <li>Maintains a persistent tracking spreadsheet with duplicate detection, enabling the team to manage ticket lifecycle from detection through CRQ creation.</li>
+                <li>Engineered an end-to-end automated workflow that connects to the ChangeManagement-Carrier shared mailbox via COM automation, detects maintenance emails by subject-line keywords, and extracts structured data (ticket numbers, maintenance windows, circuit IDs, impact, location) using configurable regex patterns.</li>
+                <li>Sends real-time Adaptive Card alerts to Microsoft Teams upon detection, giving the team instant visibility into incoming carrier work without manual inbox monitoring.</li>
+                <li>Auto-generates pre-filled Carrier CRQ records with impact auto-determination logic (emergency, subscriber count, circuit count), scheduled dates, and carrier-specific assignee group mapping for 13+ providers.</li>
+                <li>Maintains a persistent tracking spreadsheet with duplicate detection, enabling full ticket lifecycle management from initial detection through CRQ creation and resolution.</li>
             </ul>
         </div>
 
         <div class="project">
             <div class="project-title">Phoenix Travel Digital Experiences</div>
-            <div class="project-tech">Amazon Kiro, GitHub, GitHub Pages, HTML/CSS</div>
+            <div class="project-tech">Amazon Kiro &middot; GitHub &middot; GitHub Pages &middot; HTML/CSS</div>
             <ul>
                 <li>Built and deployed live customer-facing travel sites featuring interactive itineraries, RSVP pages, and payment summaries for group travel clients.</li>
-                <li>Used AI-assisted development to turn business requirements into polished web experiences, then managed source control and production publishing through GitHub Pages.</li>
-                <li><a href="https://phoenixkey87-cmyk.github.io/Keysha_40th_Vietnam/" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">View Vietnam 40th Birthday Travel Experience &rarr;</a></li>
+                <li>Used AI-assisted development to translate business requirements into polished web experiences, managing source control and production publishing through GitHub Pages.</li>
+                <li><a href="https://phoenixkey87-cmyk.github.io/Keysha_40th_Vietnam/" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">View live project &rarr;</a></li>
             </ul>
         </div>
     </div>
@@ -585,29 +604,27 @@
         <div class="education-item">
             <span class="year">2021</span>
             <span class="degree">Bachelor of Science, Business Administration</span>
-            <span class="school">Lindenwood University</span>
+            <span class="school">Lindenwood University &middot; Dean's List</span>
         </div>
-        <p class="deans-list">Dean's List</p>
 
         <div class="cert-list" style="margin-top: 24px;">
             <span class="cert-tag">AWS Certified AI Practitioner</span>
-            <span class="cert-tag">Project Management Certificate, New York University (via Pathstream), 2024</span>
             <span class="cert-tag">Certified Scrum Product Owner (CSPO), Scrum Alliance, 2023</span>
             <span class="cert-tag">Certified ScrumMaster (CSM), Scrum Alliance, 2022</span>
-            <span class="cert-tag">Six Sigma: Green Belt, LinkedIn, 2022</span>
-            <span class="cert-tag">Cert Prep: Scrum Master, LinkedIn, 2022</span>
-            <span class="cert-tag">Scrum Fundamentals Certified (SFC), VMEdu Inc.</span>
-            <span class="cert-tag">Six Sigma Yellow Belt, VMEdu Inc., 2019</span>
+            <span class="cert-tag">Project Management Certificate, NYU (Pathstream), 2024</span>
+            <span class="cert-tag">Six Sigma: Green Belt</span>
+            <span class="cert-tag">Six Sigma: Yellow Belt</span>
+            <span class="cert-tag">Scrum Fundamentals Certified (SFC)</span>
         </div>
     </div>
 
-    <!-- Awards -->
+    <!-- Awards & Leadership -->
     <div class="section">
         <h2 class="section-heading">Awards &amp; Community Leadership</h2>
         <ul class="awards-list">
-            <li>Spectrum BEST Award &ndash; recognized for outstanding customer service performance.</li>
-            <li>Active in NAMIC and WICT professional-development initiatives; Make-A-Wish volunteer.</li>
+            <li>Spectrum BEST Award &mdash; recognized for outstanding customer service performance.</li>
             <li>Selected by a director for consideration for the WICT Women to Watch recognition.</li>
+            <li>Active in NAMIC and WICT professional-development initiatives; Make-A-Wish volunteer.</li>
         </ul>
     </div>
 
