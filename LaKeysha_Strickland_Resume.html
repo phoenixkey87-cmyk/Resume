@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaKeysha Strickland | Resume</title>
+    <style>
+        :root {
+            --navy: #1B3A5C;
+            --accent: #2E86AB;
+            --dark-text: #2D2D2D;
+            --light-bg: #F0F7FA;
+            --white: #FFFFFF;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 940px;
+            margin: 30px auto;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, #264d73 100%);
+            color: white;
+            padding: 50px 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .header .credentials {
+            font-size: 1.1em;
+            color: #7ec8e3;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .header .title-line {
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-bottom: 16px;
+        }
+
+        .contact-line {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .contact-line a {
+            color: #7ec8e3;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-line a:hover {
+            border-bottom-color: #7ec8e3;
+        }
+
+        .contact-line .sep {
+            margin: 0 8px;
+            opacity: 0.5;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 16px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        .download-btn:hover {
+            background: #248a9e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(46, 134, 171, 0.35);
+        }
+
+        /* Sections */
+        .section {
+            padding: 36px 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-heading {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Impact Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: var(--light-bg);
+            border-radius: 8px;
+            padding: 20px 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 134, 171, 0.15);
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.75em;
+            color: #666;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .skill-tag {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 7px 16px;
+            font-size: 0.85em;
+            color: var(--navy);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 28px;
+            padding-left: 18px;
+            border-left: 3px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .job:hover {
+            border-left-color: var(--accent);
+        }
+
+        .job-title {
+            font-size: 1.08em;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .job-company {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .job-dates {
+            font-size: 0.85em;
+            color: var(--accent);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .job ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job ul li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .job ul li::before {
+            content: "\2022";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 24px;
+            padding-left: 18px;
+            border-left: 3px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .project:hover {
+            border-left-color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .project-tech {
+            font-size: 0.82em;
+            color: #666;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .project ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project ul li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 6px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .project ul li::before {
+            content: "\2022";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 12px;
+            padding: 12px 16px;
+            background: var(--light-bg);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .education-item .degree {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.95em;
+            display: block;
+        }
+
+        .education-item .school {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .education-item .year {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85em;
+            float: right;
+        }
+
+        .deans-list {
+            font-style: italic;
+            font-size: 0.85em;
+            color: #666;
+            margin: 8px 0 0 16px;
+        }
+
+        /* Certifications */
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .cert-tag {
+            background: var(--navy);
+            color: white;
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        /* Awards */
+        .awards-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .awards-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 10px;
+            font-size: 0.92em;
+            line-height: 1.6;
+        }
+
+        .awards-list li::before {
+            content: "\2022";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            color: #999;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .section {
+                padding: 24px 20px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .header .title-line {
+                font-size: 0.72em;
+            }
+        }
+
+        /* Print */
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; margin: 0; border-radius: 0; }
+            .header { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .download-btn { display: none; }
+            .section { padding: 20px 30px; }
+            .job, .project { border-left-color: var(--accent); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>LaKeysha Strickland</h1>
+        <div class="credentials">MBA, CSM, CSPO</div>
+        <div class="title-line">Systems Engineer II | AI-Assisted Solutions | Enterprise Automation | Technical Product Delivery</div>
+        <div class="contact-line">
+            St. Louis, MO
+            <span class="sep">|</span>
+            <a href="tel:+13143074921">314-307-4921</a>
+            <span class="sep">|</span>
+            <a href="mailto:keystrickland@charter.net">keystrickland@charter.net</a>
+            <span class="sep">|</span>
+            <a href="https://www.linkedin.com/in/lakeysha-strickland/" target="_blank">LinkedIn</a>
+        </div>
+        <a href="LaKeysha_Strickland_Resume.pdf" download class="download-btn">&#x1F4E5; Download PDF Resume</a>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="section">
+        <h2 class="section-heading">Professional Summary</h2>
+        <p class="summary">
+            Systems Engineer II with 12+ years of progressive experience spanning enterprise network operations,
+            change governance, AI-assisted solution development, process automation, and technical training.
+            Designed and launched an enterprise Deconfliction Dashboard and Portal using Amazon Kiro and Microsoft
+            Power Apps that proactively identifies maintenance conflicts and helps avoid at least 10 potential outages
+            on a typical day, including 19 in a single day. Coordinates high-volume change activity across 20+
+            engineering and operations teams while translating complex technical needs into practical tools,
+            documented processes, training, and measurable operational improvements.
+        </p>
+    </div>
+
+    <!-- Selected Impact -->
+    <div class="section">
+        <h2 class="section-heading">Selected Impact</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-value">10&ndash;19</span>
+                <span class="metric-label">potential outages avoided daily</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">20+</span>
+                <span class="metric-label">carrier tickets coordinated daily</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">50+</span>
+                <span class="metric-label">enterprise changes handled weekly</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">20+</span>
+                <span class="metric-label">engineering teams supported</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">6</span>
+                <span class="metric-label">SOPs updated and standardized</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">Multiple</span>
+                <span class="metric-label">employees trained across processes</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">Enterprise</span>
+                <span class="metric-label">dashboard built from concept to launch</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">Live</span>
+                <span class="metric-label">customer-facing sites deployed via GitHub</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Expertise -->
+    <div class="section">
+        <h2 class="section-heading">Core Expertise</h2>
+        <div class="skills-list">
+            <span class="skill-tag">Amazon Kiro</span>
+            <span class="skill-tag">Amazon Q</span>
+            <span class="skill-tag">Microsoft Power Apps</span>
+            <span class="skill-tag">Power Automate</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">GitHub/GitHub Pages</span>
+            <span class="skill-tag">AI-Assisted Development</span>
+            <span class="skill-tag">Systems Engineering</span>
+            <span class="skill-tag">Enterprise Network Operations</span>
+            <span class="skill-tag">Change Management</span>
+            <span class="skill-tag">Risk &amp; Impact Analysis</span>
+            <span class="skill-tag">Technical Product Delivery</span>
+            <span class="skill-tag">Agile/Scrum</span>
+            <span class="skill-tag">ITIL</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">BMC Remedy</span>
+            <span class="skill-tag">SharePoint</span>
+            <span class="skill-tag">UAT</span>
+            <span class="skill-tag">SOP Development</span>
+            <span class="skill-tag">Technical Training</span>
+            <span class="skill-tag">Stakeholder Management</span>
+        </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="section">
+        <h2 class="section-heading">Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-title">Systems Engineer II</div>
+            <div class="job-company">Spectrum / Charter Communications</div>
+            <div class="job-dates">Mar 2026 &ndash; Present</div>
+            <ul>
+                <li>Designed and deployed an enterprise-wide Deconfliction Dashboard and Portal using Amazon Kiro and Microsoft Power Apps to identify overlapping maintenance activity before implementation.</li>
+                <li>Help avoid at least 10 potential customer-impacting outages on a typical day through proactive conflict detection, including 19 potential outages identified and prevented in a single day.</li>
+                <li>Coordinate approximately 50 enterprise change tickets per week and roughly 20 third-party carrier tickets per day for providers including Comcast, Lumen, Netflix, and other telecommunications and content partners.</li>
+                <li>Collaborate with 20+ engineering and operations teams nationwide to validate impacts, correct ticket data, enforce approved Methods of Procedure (MOPs), and reduce operational risk.</li>
+                <li>Updated and standardized six SOPs to strengthen governance, improve consistency, and clarify execution requirements across engineering workflows.</li>
+                <li>Train employees on impact corrections, carrier ticket creation, correct MOP selection, change processes, and internal tools; also create video guides and technical documentation to support adoption.</li>
+                <li>Use Amazon Q for code support, documentation, testing, workflow automation, and process improvement; represent the team in cloud-related meetings and communicate updates to stakeholders.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Change Control Analyst II</div>
+            <div class="job-company">Spectrum / Charter Communications</div>
+            <div class="job-dates">Mar 2019 &ndash; Mar 2026</div>
+            <ul>
+                <li>Led analytic oversight of scheduled network maintenance, identifying resource and cross-service collisions across a converged enterprise network.</li>
+                <li>Served as a primary point of contact for third-party maintenance activity and coordinated complex changes among engineering, operations, project teams, and external providers.</li>
+                <li>Prepared operational reporting, analyzed maintenance trends, and recommended standards and process improvements that strengthened compliance and network reliability.</li>
+                <li>Developed change support documentation, manuals, procedures, and training while performing impact assessments and risk reviews in alignment with ITIL practices.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Change Control Analyst</div>
+            <div class="job-company">Spectrum / Charter Communications</div>
+            <div class="job-dates">Jan 2017 &ndash; Mar 2019</div>
+            <ul>
+                <li>Coordinated and facilitated scheduled network maintenance while enforcing change policies and procedures designed to protect the Spectrum network and revenue-generating customers.</li>
+                <li>Analyzed customer and service impacts, escalated conflicts, and supported carrier-class operating practices across enterprise maintenance activity.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Internet &amp; Voice Repair Technician</div>
+            <div class="job-company">Spectrum / Charter Communications</div>
+            <div class="job-dates">Jan 2014 &ndash; Jan 2017</div>
+            <ul>
+                <li>Resolved complex internet and voice service issues, handled customer escalations, and consistently supported service-quality and customer-experience goals.</li>
+                <li>Earned the Spectrum BEST Award for outstanding customer service performance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Selected Technical Projects -->
+    <div class="section">
+        <h2 class="section-heading">Selected Technical Projects</h2>
+
+        <div class="project">
+            <div class="project-title">Enterprise Deconfliction Dashboard &amp; Portal</div>
+            <div class="project-tech">Amazon Kiro, Microsoft Power Apps, AI-Assisted Development</div>
+            <ul>
+                <li>Took the solution from business problem and concept through design, development, testing, user adoption, and ongoing enhancement; partnered with a colleague for SQL integration support.</li>
+                <li>Centralized maintenance visibility so specialists can identify ticket collisions before execution and make informed decisions that reduce outage risk and manual research.</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Phoenix Travel Digital Experiences</div>
+            <div class="project-tech">Amazon Kiro, GitHub, GitHub Pages, HTML/CSS</div>
+            <ul>
+                <li>Built and deployed live customer-facing travel sites featuring interactive itineraries, RSVP pages, and payment summaries for group travel clients.</li>
+                <li>Used AI-assisted development to turn business requirements into polished web experiences, then managed source control and production publishing through GitHub Pages.</li>
+                <li><a href="https://phoenixkey87-cmyk.github.io/Keysha_40th_Vietnam/" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">View Vietnam 40th Birthday Travel Experience &rarr;</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2 class="section-heading">Education</h2>
+
+        <div class="education-item">
+            <span class="year">2026</span>
+            <span class="degree">Master of Business Administration (MBA)</span>
+            <span class="school">Louisiana State University</span>
+        </div>
+
+        <div class="education-item">
+            <span class="year">2021</span>
+            <span class="degree">Bachelor of Science, Business Administration</span>
+            <span class="school">Lindenwood University</span>
+        </div>
+        <p class="deans-list">Dean's List</p>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+        <h2 class="section-heading">Certifications &amp; Professional Development</h2>
+        <div class="cert-list">
+            <span class="cert-tag">Certified ScrumMaster (CSM), Scrum Alliance, 2022</span>
+            <span class="cert-tag">Certified Scrum Product Owner (CSPO), Scrum Alliance, 2023</span>
+            <span class="cert-tag">NYU Project Management Certificate</span>
+        </div>
+    </div>
+
+    <!-- Awards -->
+    <div class="section">
+        <h2 class="section-heading">Awards &amp; Community Leadership</h2>
+        <ul class="awards-list">
+            <li>Spectrum BEST Award &ndash; recognized for outstanding customer service performance.</li>
+            <li>Active in NAMIC and WICT professional-development initiatives; Make-A-Wish volunteer.</li>
+            <li>Selected by a director for consideration for the WICT Women to Watch recognition.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 LaKeysha Strickland. Built with Amazon Kiro.
+    </div>
+</div>
+
+</body>
+</html>
