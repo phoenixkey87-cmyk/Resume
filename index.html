@@ -507,6 +507,26 @@
         }
 
         /* Footer */
+        .download-btn {
+            display: inline-block;
+            margin-top: 16px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+        }
+
+        .download-btn:hover {
+            background: #248a9e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(46, 134, 171, 0.35);
+        }
+
         .footer {
             text-align: center;
             padding: 20px;
@@ -597,7 +617,7 @@
             <div class="cover-title">Systems Engineer II</div>
             <p class="cover-tagline">
                 Building enterprise tools that prevent outages, streamline change operations, 
-                and turn complex data into actionable decisions.
+                and turn complex data into actionable decisions &mdash; powered by AI-assisted development.
             </p>
             <div class="cover-highlights">
                 <div class="cover-stat">
@@ -623,7 +643,7 @@
     <div class="resume-body" id="resume-body">
     <!-- Header -->
     <div class="header">
-        <h1><a href="#" id="back-to-cover" style="color: white; text-decoration: none; cursor: pointer;">LaKeysha Strickland</a></h1>
+        <h1>LaKeysha Strickland</h1>
         <div class="credentials">MBA, CSM, CSPO</div>
         <div class="title-line">Systems Engineer II | AI-Assisted Solutions | Enterprise Automation | Technical Product Delivery</div>
         <div class="contact-line">
@@ -635,6 +655,7 @@
             <span class="sep">|</span>
             <a href="https://www.linkedin.com/in/lakeysha-strickland/" target="_blank">LinkedIn</a>
         </div>
+        <a href="LaKeysha_Strickland_Resume.pdf" download class="download-btn">&#x1F4E5; Download PDF Resume</a>
     </div>
 
     <!-- Tab Navigation -->
@@ -864,13 +885,6 @@
             button.setAttribute('aria-selected', 'true');
             document.getElementById(targetTab).classList.add('active');
         });
-    });
-    // Back to cover sheet when clicking name
-    document.getElementById('back-to-cover').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('resume-body').classList.remove('visible');
-        document.getElementById('cover-sheet').classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 </script>
 
