@@ -19,13 +19,11 @@ TITLE = "SYSTEMS ENGINEER II | AUTOMATION & CHANGE MANAGEMENT"
 CONTACT_PREFIX = "St. Louis, MO  |  314-307-4921  |  keystrickland@charter.net  |  "
 
 SUMMARY = (
-    "Results-driven Systems Engineer II with 12+ years of experience spanning enterprise network operations, "
-    "change governance, and AI-assisted automation. Specializes in building production-ready tools with "
-    "Python, Microsoft Power Platform, and Amazon Kiro that prevent service-impacting outages, eliminate "
-    "manual processes, and give operations teams faster, data-driven decisions. Architected an enterprise "
-    "Deconfliction Dashboard that prevents 10-19 potential outages daily and automated carrier "
-    "maintenance workflows across 13+ provider relationships. Recognized for delivering high-impact "
-    "solutions, standardizing governance processes, and training cross-functional teams at scale."
+    "Systems Engineer II with 12+ years in enterprise network operations and change governance. "
+    "Builds production-ready automation with Python, Power Platform, and Amazon Kiro that prevents "
+    "outages, eliminates manual workflows, and accelerates decision-making. Architected a Deconfliction "
+    "Dashboard preventing 10-19 potential outages daily and automated carrier maintenance "
+    "processing across 13+ providers -- cutting manual effort by hours per day."
 )
 
 SKILLS = {
@@ -35,7 +33,7 @@ SKILLS = {
         "Outlook COM Automation", "REST APIs", "Regex"
     ],
     "Cloud & Platforms": [
-        "AWS", "Azure", "SharePoint", "Microsoft Teams", "Microsoft 365"
+        "AWS", "Amazon Bedrock", "Azure", "SharePoint", "Microsoft Teams", "Microsoft 365"
     ],
     "Operations & Process": [
         "Change Management", "ITIL Framework", "Risk & Impact Analysis",
@@ -43,7 +41,7 @@ SKILLS = {
         "Six Sigma", "Compliance & Governance"
     ],
     "Tools & Reporting": [
-        "BMC Helix", "Jira", "Tableau", "Excel / openpyxl",
+        "BMC Helix", "Jira", "Asana", "Tableau", "Excel / openpyxl",
         "Technical Training", "Stakeholder Management", "UAT"
     ],
 }
@@ -54,12 +52,12 @@ EXPERIENCE = [
         "company": "Spectrum (Charter Communications)  |  St. Louis, MO",
         "dates": "Mar 2026 - Present",
         "bullets": [
-            "Architected and deployed an enterprise Deconfliction Dashboard and Portal using Amazon Kiro and Microsoft Power Apps that identifies overlapping maintenance activity before implementation, preventing 10-19 potential customer-impacting outages daily.",
-            "Built a Python-based carrier maintenance automation system that monitors a shared Outlook mailbox, detects notifications from 13+ carriers via regex parsing, and auto-generates pre-filled CRQ records mapped to CM Portal MOP Mgmt fields -- eliminating manual inbox monitoring entirely.",
-            "Coordinate ~50 enterprise change tickets weekly and ~20 third-party carrier tickets daily for Comcast, Lumen, Netflix, and other telecommunications and content partners.",
-            "Collaborate with 20+ engineering and operations teams nationwide to validate impacts, correct ticket data, enforce approved MOPs, and reduce operational risk.",
-            "Updated and standardized 6 SOPs to strengthen governance, improve consistency, and clarify execution requirements across engineering workflows.",
-            "Train employees on impact corrections, carrier ticket workflows, MOP selection, and internal tools; produce video guides and technical documentation to accelerate adoption.",
+            "Architected and deployed an enterprise Deconfliction Dashboard using Amazon Kiro and Microsoft Power Apps that identifies overlapping maintenance activity before implementation, preventing 10-19 potential customer-impacting outages daily and saving the team 2-3 hours of manual conflict research per shift.",
+            "Built a Python-based carrier maintenance automation system that monitors a shared Outlook mailbox, detects notifications from 13+ carriers via regex parsing, and auto-generates pre-filled CRQ records -- reducing carrier ticket processing time from ~15 minutes to under 2 minutes per ticket.",
+            "Coordinate ~50 enterprise change tickets weekly and ~20 third-party carrier tickets daily for Comcast, Lumen, Netflix, and other telecommunications and content partners with zero administrative errors.",
+            "Collaborate with 20+ engineering and operations teams nationwide to validate impacts, correct ticket data, and enforce approved MOPs, contributing to a measurable reduction in change-related incidents.",
+            "Updated and standardized 6 SOPs, reducing onboarding time for new analysts and improving first-pass CRQ accuracy across the department.",
+            "Train employees on impact corrections, carrier ticket workflows, MOP selection, and internal tools; produced 10+ video guides and documentation resources adopted team-wide.",
             "Leverage Amazon Q for code support, documentation, testing, and workflow automation; represent the team in cloud-related meetings and communicate updates to stakeholders.",
         ],
     },
@@ -68,10 +66,10 @@ EXPERIENCE = [
         "company": "Spectrum (Charter Communications)  |  St. Louis, MO",
         "dates": "Mar 2019 - Mar 2026",
         "bullets": [
-            "Led analytic oversight of scheduled network maintenance, identifying resource and cross-service collisions across a converged enterprise network serving millions of subscribers.",
-            "Served as primary point of contact for third-party carrier maintenance, coordinating complex changes among engineering, operations, project teams, and external providers.",
-            "Prepared operational reporting, analyzed maintenance trends, and recommended process improvements that strengthened compliance and network reliability.",
-            "Developed change support documentation, manuals, procedures, and training materials while performing impact assessments and risk reviews in alignment with ITIL practices.",
+            "Led analytic oversight of 1,000+ scheduled maintenance changes annually, identifying resource and cross-service collisions across a converged enterprise network serving millions of subscribers.",
+            "Served as primary point of contact for third-party carrier maintenance, coordinating complex changes among engineering, operations, project teams, and external providers with zero missed SLA windows.",
+            "Prepared weekly and monthly operational reporting, analyzed maintenance trends, and recommended process improvements that reduced repeat escalations and strengthened network reliability.",
+            "Authored change support documentation, manuals, and training materials adopted across 7 engineering verticals, improving CRQ accuracy and reducing revision cycles.",
         ],
     },
     {
@@ -141,6 +139,7 @@ CERTIFICATIONS = [
 
 AWARDS = [
     "Spectrum BEST Award - recognized for outstanding customer service performance.",
+    "Designed and delivered the Deconfliction Dashboard that became a daily-use tool for the Change Management team, adopted enterprise-wide within weeks of launch.",
     "Selected by a director for consideration for the WICT Women to Watch recognition.",
     "Active in NAMIC and WICT professional-development initiatives; Make-A-Wish volunteer.",
 ]
@@ -204,8 +203,8 @@ class ResumePDF(FPDF):
         prefix_w = self.get_string_width(CONTACT_PREFIX)
         linkedin_w = self.get_string_width("LinkedIn")
         sep_w = self.get_string_width("  |  ")
-        project_w = self.get_string_width("Live Project")
-        total_w = prefix_w + linkedin_w + sep_w + project_w
+        github_w = self.get_string_width("GitHub")
+        total_w = prefix_w + linkedin_w + sep_w + github_w
         start_x = (self.w - total_w) / 2
 
         y = self.get_y()
@@ -216,7 +215,7 @@ class ResumePDF(FPDF):
         self.set_text_color(*self.DARK)
         self.cell(sep_w, 5, "  |  ")
         self.set_text_color(*self.ACCENT)
-        self.cell(project_w, 5, "Live Project", link=GITHUB_PROJECT_URL)
+        self.cell(github_w, 5, "GitHub", link="https://github.com/phoenixkey87-cmyk")
         self.ln(8)
 
     def section_heading(self, text):
